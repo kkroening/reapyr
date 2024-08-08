@@ -1,0 +1,11 @@
+*.bak
+*.DS_Store
+*.egg-info
+*.pyc
+/.cookie
+/.idea/
+/build/
+/dist/
+/src
+/venv/
+__pycache__

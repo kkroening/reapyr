@@ -1,0 +1,46 @@
+[MASTER]
+fail-under=10.0
+ignore-patterns=
+ignore=CVS
+
+[MESSAGES CONTROL]
+disable=
+    dangerous-default-value,  # (don't be an idiot, and it'll be fine)
+    fixme,  # (comment this line to see all TODOs/FIXMEs)
+    implicit-str-concat,  # (strings may be split across multiple lines)
+    missing-class-docstring,
+    missing-function-docstring,
+    missing-module-docstring,
+    too-many-arguments,
+    too-many-instance-attributes,
+    unexpected-keyword-arg,  # (pylint getting confused in dataclasses)
+    wrong-import-order,
+enable=
+    useless-suppression
+
+[REPORTS]
+output-format=colorized
+
+[FORMAT]
+# "Regexp for a line that is allowed to be longer than the limit":
+ignore-long-lines=^\s*(# )?<?https?://\S+>?$
+
+[BASIC]
+# "Good variable names which should always be accepted":
+good-names=i,j,k,e,x,_
+
+# "This flag controls whether inconsistent-quotes generates a warning when the
+# character used as a quote delimiter is used inconsistently within a module":
+check-quote-consistency=yes
+
+# "Maximum number of return / yield for function / method body":
+max-returns=1
+
+# "Maximum number of statements in function / method body":
+max-statements=50
+
+# argument-rgx: "Regular expression matching correct argument names"
+# variable-rgx: "Regular expression matching correct variable names
+# Override to allow shorter variable names than the default:
+argument-rgx=^[a-z_][a-z0-9_]{1,50}$
+variable-rgx=^([ijkvxy_]|([a-z_][a-z0-9_]{2,50})|df|dt|ok)$
